@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <script>
+
+        //array for game
+        const array = ["Rock", "Paper", "Scissors"]
+
+        let playerChoice
+        let computerChoice
+        let playerScore
+        let computerScore
+
+        gameTime()
+
+        //Computer picking rock/paper/scissors randomly
+        function getComputerChoice(){
+            return array[Math.floor(Math.random()* array.length)]
+        }
+
+    console.log(getComputerChoice())
+
+    function gameTime(){
+            computerScore = 0
+            playerScore = 0
+
+            for(let i = 0; i <=5; i++){
+                userInput()
+            }
+        }
+
+        function userInput(){
+            playerChoice = prompt("Rock, Paper, or Scissors?", "")
+
+            if((playerChoice.toLowerCase() == "rock") || (playerChoice.toLowerCase() == "paper")  || (playerChoice.toLowerCase() == "scissors")){
+                console.log(playGame(playerChoice,getComputerChoice))
+            }else{
+                alert("ERROR, invalid Entry")
+                userInput()
+            }
+        }
+
+    console.log(userInput())
+
+        function playGame(playerChoice, computerChoice){
+            computerChoice = getComputerChoice().toLowerCase()
+            playerChoice = playerChoice.toLowerCase()
+            
+            console.log(computerChoice)
+            console.log(playerChoice)
+
+            if(playerChoice == computerChoice){
+                alert("Tie Game\n Computer Score: " + computerScore + "\nPlayer Score: " + playerScore)
+                return "Tie Game\n Computer Score: " + computerScore + "\nPlayer Score: " + playerScore
+            }else if((playerChoice == "rock" && computerChoice == "scissors") 
+            || (playerChoice == "scissors" && computerChoice == "paper") 
+            || (playerChoice == "paper" && computerChoice == "rock")){
+                playerScore+= 1
+                alert("You Win\n Computer Score: " + computerScore + "\nPlayer Score: " + playerScore)       
+                return "You Win\n Computer Score: " + computerScore + "\nPlayer Score: " + playerScore
+                
+            }else{
+                computerScore+= 1
+                alert("You Lose\n Computer Score: " + computerScore + "\nPlayer Score: " + playerScore)                
+                return "You Lose\n Computer Score: " + computerScore + "\nPlayer Score: " + playerScore
+                
+            } 
+            
+        }
+
+    
+
+
+
+    </script>
+    
+</body>
+</html>
