@@ -19,35 +19,42 @@
 
         gameTime()
 
+        console.log(winner())
         //Computer picking rock/paper/scissors randomly
         function getComputerChoice(){
             return array[Math.floor(Math.random()* array.length)]
         }
 
-    console.log(getComputerChoice())
+        // console.log(getComputerChoice())
 
-    function gameTime(){
-            computerScore = 0
-            playerScore = 0
+        //function to count computer/player score
+        function gameTime(){
+                computerScore = 0
+                playerScore = 0
 
-            for(let i = 0; i <=5; i++){
-                userInput()
+                for(let i = 0; i <=5; i++){
+                    userInput()
+                    
+                }
             }
-        }
-
+        
+        //grabbing user input rock/paper/scissors
         function userInput(){
             playerChoice = prompt("Rock, Paper, or Scissors?", "")
 
             if((playerChoice.toLowerCase() == "rock") || (playerChoice.toLowerCase() == "paper")  || (playerChoice.toLowerCase() == "scissors")){
                 console.log(playGame(playerChoice,getComputerChoice))
             }else{
-                alert("ERROR, invalid Entry")
+                alert("ERROR, INVALID ENTRY")
                 userInput()
             }
         }
+        
 
-    console.log(userInput())
+    //console.log(userInput())
 
+        //checking who wins and declaring it
+        //also increasing score
         function playGame(playerChoice, computerChoice){
             computerChoice = getComputerChoice().toLowerCase()
             playerChoice = playerChoice.toLowerCase()
@@ -72,6 +79,20 @@
                 
             } 
             
+        }
+
+        //function to declare winner
+        function winner(){
+            if(playerScore == computerScore){
+                alert("Computer Score: " + computerScore + "\nPlayer Score: " + playerScore + "\n TIE GAME")
+                return "Computer Score: " + computerScore + "\nPlayer Score: " + playerScore + "\n TIE GAME"
+            }else if(playerScore > computerScore){
+                alert("Computer Score: " + computerScore + "\nPlayer Score: " + playerScore  + "\n YOU WIN :D")       
+                return "Computer Score: " + computerScore + "\nPlayer Score: " + playerScore  + "\n YOU WIN :D"
+            }else if(playerScore < computerScore){
+                alert("Computer Score: " + computerScore + "\nPlayer Score: " + playerScore + "\n YOU LOSE :(")                
+                return "Computer Score: " + computerScore + "\nPlayer Score: " + playerScore + "\n YOU LOSE :("
+            }
         }
 
     
