@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors 2</title>
+</head>
+<body>
+
+    <script>
+
+        const array = ["Rock", "Paper", "Scissors"]
+
+        let playerChoice
+        let computerChoice
+        let playerScore = 0
+        let computerScore = 0
+
+        
+        function getComputerChoice(){
+            return array[Math.floor(Math.random()* array.length)]
+        }
+
+        function playGame(playerChoice, computerChoice){
+            computerChoice = getComputerChoice().toLowerCase()
+            playerChoice = playerChoice.toLowerCase()
+
+            if(playerChoice == "rock" && computerChoice == "scissors"){
+                playerScore+=1
+                return "You Win! Rock beats Scissors\n" + "Score: " + playerScore + "-" + computerScore
+            }else if(playerChoice == "rock" && computerChoice == "paper"){
+                computerScore+=1
+                return "You Lost! Paper beats Rock\n " +  "Score: " + playerScore + "-" + computerScore
+            }else if(playerChoice == "scissors" && computerChoice == "rock"){
+                computerScore+=1
+                return "You Lost! Rock beats Scissors\n" + "Score: " + playerScore + "-" + computerScore
+            }else if(playerChoice == "scissors" && computerChoice == "paper"){
+                playerScore+=1
+                return "You Win! Scissors beats Paper\n" + "Score: " + playerScore + "-" + computerScore
+            }else if(playerChoice == "paper" && computerChoice == "scissors"){
+                computerScore+=1
+                return "You Lost! Scissors beats Paper\n" + "Score: " + playerScore + "-" + computerScore
+            }else if(playerChoice == "paper" && computerChoice == "rock"){
+                playerScore+=1
+                return "You Win! Paper beats Rock\n" + "Score: " + playerScore + "-" + computerScore
+            }else{
+                return "Tie Game! " + "Score: " + playerScore + "-" + computerScore
+            }
+
+        }
+
+        function gameTime(){
+            for(let i = 0; i < 5; i++){
+                playerChoice = prompt("Rock, Paper, Scissors?")
+
+            if((playerChoice.toLowerCase() == "rock") || (playerChoice.toLowerCase() == "paper")  || (playerChoice.toLowerCase() == "scissors")){
+                console.log(playGame(playerChoice,getComputerChoice))
+            }else{
+                alert("ERROR, INVALID ENTRY")
+                gameTime()
+            }
+            
+                playerChoice = playerChoice.toLowerCase()
+                computerChoice = getComputerChoice().toLowerCase()
+
+            
+            }
+
+            if(playerScore > computerScore){
+                    alert("YOU WIN!!/n Final Score: " + playerScore + " - " + computerScore)
+                }else if(computerScore > playerScore){
+                    alert("YOU LOSE!!/n Final Score: " + playerScore + " - " + computerScore)
+                }else{
+                    alert("ITS A TIE!!\n Final Score: " + playerScore + " - " + computerScore)
+                }
+        }
+
+        gameTime()
+
+    </script>
+    
+</body>
+</html>
