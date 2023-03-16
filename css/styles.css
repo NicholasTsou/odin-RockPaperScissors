@@ -1,0 +1,95 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: black;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.header{
+    display: flex;
+    background-color: black;
+    justify-content: center;
+}
+
+#title{
+    color: white;
+    font-size: 36px;
+    padding: 30px;
+}
+
+#mickey{
+    width: 150px;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+/* SCOREBOARD */
+
+.scoreboard{
+    background-color:red;
+}
+
+.scoreboard .btn{
+    background-color:red;
+}
+
+.btn img:hover{
+    scale: 1.3;
+    border-color: yellow;
+}
+
+.scoreboard-info{
+    display: flex;
+    justify-content: center;
+}
+
+.scoreline{
+    display: flex;
+    justify-content: center;
+}
+
+#score{
+    font-size: 26px;
+    padding: 20px;
+}
+
+
+#rock{
+    width: 125px;
+    border-radius: 30%;
+    padding: 30px;
+}
+
+#paper{
+    width: 125px;
+    height: 109px;
+    border-radius: 30%;
+    padding: 30px;
+}
+
+#scissors{
+    width: 125px;
+    height: 109px;
+    border-radius: 30%;
+    padding: 30px;
+}
+
+/* RESULTS */
+
+.output{
+    font-size: 30px;
+    padding: 100px 0px 100px 0px;
+}
+
+/*FOOTER*/
+
+.footer{
+    background-color: yellow;;
+}
