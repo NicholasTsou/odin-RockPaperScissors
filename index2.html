@@ -4,9 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors 2</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <div><img  id="mickey" src="images/mickey.jpg"></div>
+            <p id="title">Mickey's Rock Paper Scissors</p>
+        </div>
+
+        <div class="scoreboard">
+            <h1 class="info2">First to 5 points wins!</h1>
+            <h2>Player VS. Mickey</h2>
+            <div class="scoreline">
+            <div id="score" class="player-score">0</div>
+            <div id="score" class="hyphen">-</div>
+            <div id="score" class="computer-score">0</div>
+            </div>
+            <div class="scoreboard-info">
+                <button class="btn" id="rock1">
+                    <img  id="rock" src="images/rock.jpg">
+                </button>
+                <button class="btn" id="paper1">
+                    <img  id="paper" src="images/paper.jpg">
+                </button>
+                <button class="btn" id="scissors1">
+                    <img  id="scissors" src="images/scissors.jpg">
+                </button>
+            </div>
+        
+        <div class="output">
+            <p class="results"> THIS IS WHERE THE RESULTS WILL SHOW</p>
+        </div>
+            
+        </div>
+        <div class="footer">
+            <p>Copyright © The Odin Project 2023 | Nicholas Tsoukatos</p>
+        </div>
+    </div>
+
 
     <script>
 
@@ -52,7 +89,7 @@
 
         function gameTime(){
             for(let i = 0; i < 5; i++){
-                playerChoice = prompt("Rock, Paper, Scissors?")
+                // playerChoice = prompt("Rock, Paper, Scissors?")
 
             if((playerChoice.toLowerCase() == "rock") || (playerChoice.toLowerCase() == "paper")  || (playerChoice.toLowerCase() == "scissors")){
                 console.log(playGame(playerChoice,getComputerChoice))
