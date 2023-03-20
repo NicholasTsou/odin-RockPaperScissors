@@ -55,7 +55,7 @@ body{
     justify-content: center;
 }
 
-#score{
+.score{
     font-size: 26px;
     padding: 20px;
 }

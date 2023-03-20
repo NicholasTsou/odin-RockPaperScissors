@@ -18,24 +18,24 @@
             <h1 class="info2">First to 5 points wins!</h1>
             <h2>Player VS. Mickey</h2>
             <div class="scoreline">
-            <div id="score" class="player-score">0</div>
-            <div id="score" class="hyphen">-</div>
-            <div id="score" class="computer-score">0</div>
+            <div class="score" id="player-score">0</div>
+            <div class="score" id="hyphen">-</div>
+            <div class="score" id="computer-score">0</div>
             </div>
             <div class="scoreboard-info">
-                <button class="btn" id="rock1" >
+                <button class="btn" data-button="rock1" id="rock3" >
                     <img  id="rock" src="images/rock.jpg">
                 </button>
-                <button class="btn" id="paper1">
+                <button class="btn" data-button="paper1" id="paper3">
                     <img  id="paper" src="images/paper.jpg">
                 </button>
-                <button class="btn" id="scissors1">
+                <button class="btn" data-button="scissors1" id="scissors3">
                     <img  id="scissors" src="images/scissors.jpg">
                 </button>
             </div>
         
         <div class="output">
-            <p class="results"> THIS IS WHERE THE RESULTS WILL SHOW</p>
+            <p class="results" id="winner"> THIS IS WHERE THE RESULTS WILL SHOW</p>
         </div>
             
         </div>
@@ -45,7 +45,8 @@
     </div>
 
 
-    <script>
+    <script src="script.js">
+
 
     
         const array = ["Rock", "Paper", "Scissors"]
