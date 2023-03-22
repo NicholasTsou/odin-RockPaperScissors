@@ -17,6 +17,8 @@ const scissorBtn = document.querySelector('#scissors3');
 //results to display who won and what they chose
 const winner = document.querySelector('#winner');
 
+//restart button
+const restartBtn = document.querySelector("#restart");
 
 //getting random computer choice
 function getComputerChoice(){
@@ -118,6 +120,20 @@ scissorBtn.addEventListener('click', () =>{
     playGame(playerChoice, computerChoice);
 
     gameTime();
-})
+});
+
+restartBtn.addEventListener('click',() =>{
+    playerScore = 0;
+    computerScore = 0;
+    winner.textContent = "";
+    playerScore1.textContent = 0;
+    computerScore1.textContent = 0;
+    rockBtn.disabled = false;
+    paperBtn.disabled = false;
+    scissorBtn.disabled =false;
+
+    
+});
+
 
 
